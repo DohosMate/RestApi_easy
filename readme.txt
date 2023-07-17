@@ -20,3 +20,9 @@ viz - A legjobb szomjoltó
 
 
 pip freeze > requirements.txt
+
+install apache2 
+https://www.youtube.com/watch?v=Oy52MqsWQdM&list=PLDvInfB8ki_IuB1yuDEZMaCmau50qrVzD&index=12&t=89s
+
+deploy a Flask app on Raspi
+https://www.youtube.com/watch?v=w0QDAg85Oow&list=PLDvInfB8ki_IuB1yuDEZMaCmau50qrVzD&index=11

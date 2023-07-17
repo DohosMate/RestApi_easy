@@ -1,0 +1,1069 @@
+[Sun Jul 16 16:50:15.708432 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] [2023-07-16 16:50:15,570] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 16:50:15.708650 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] Traceback (most recent call last):
+[Sun Jul 16 16:50:15.708674 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:50:15.708694 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     self.dialect.do_execute(
+[Sun Jul 16 16:50:15.708712 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:50:15.708733 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:50:15.708750 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Jul 16 16:50:15.708767 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] 
+[Sun Jul 16 16:50:15.708785 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] The above exception was the direct cause of the following exception:
+[Sun Jul 16 16:50:15.708802 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] 
+[Sun Jul 16 16:50:15.708818 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] Traceback (most recent call last):
+[Sun Jul 16 16:50:15.708836 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:50:15.708854 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     response = self.full_dispatch_request()
+[Sun Jul 16 16:50:15.708872 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:50:15.708892 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:50:15.708910 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:50:15.708929 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     rv = self.dispatch_request()
+[Sun Jul 16 16:50:15.708946 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:50:15.708964 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:50:15.708982 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 16:50:15.709000 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     db.session.commit()
+[Sun Jul 16 16:50:15.709016 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 16:50:15.709035 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     return self._proxied.commit()
+[Sun Jul 16 16:50:15.709052 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 16:50:15.709070 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     trans.commit(_to_root=True)
+[Sun Jul 16 16:50:15.709088 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "<string>", line 2, in commit
+[Sun Jul 16 16:50:15.709124 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:50:15.709144 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:50:15.709162 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1236, in commit
+[Sun Jul 16 16:50:15.709180 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     self._prepare_impl()
+[Sun Jul 16 16:50:15.709198 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "<string>", line 2, in _prepare_impl
+[Sun Jul 16 16:50:15.709216 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:50:15.709235 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:50:15.709252 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+[Sun Jul 16 16:50:15.709270 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     self.session.flush()
+[Sun Jul 16 16:50:15.709288 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 16:50:15.709306 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     self._flush(objects)
+[Sun Jul 16 16:50:15.709323 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4299, in _flush
+[Sun Jul 16 16:50:15.709341 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     transaction.rollback(_capture_exception=True)
+[Sun Jul 16 16:50:15.709359 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+[Sun Jul 16 16:50:15.709378 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     raise exc_value.with_traceback(exc_tb)
+[Sun Jul 16 16:50:15.709396 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+[Sun Jul 16 16:50:15.709415 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     flush_context.execute()
+[Sun Jul 16 16:50:15.709432 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[Sun Jul 16 16:50:15.709450 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     rec.execute(self)
+[Sun Jul 16 16:50:15.709468 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[Sun Jul 16 16:50:15.709486 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     util.preloaded.orm_persistence.save_obj(
+[Sun Jul 16 16:50:15.709503 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[Sun Jul 16 16:50:15.709521 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     _emit_insert_statements(
+[Sun Jul 16 16:50:15.709539 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+[Sun Jul 16 16:50:15.709572 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     result = connection.execute(
+[Sun Jul 16 16:50:15.709590 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1412, in execute
+[Sun Jul 16 16:50:15.709608 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     return meth(
+[Sun Jul 16 16:50:15.709625 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+[Sun Jul 16 16:50:15.709643 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     return connection._execute_clauseelement(
+[Sun Jul 16 16:50:15.709662 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+[Sun Jul 16 16:50:15.709680 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     ret = self._execute_context(
+[Sun Jul 16 16:50:15.709698 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+[Sun Jul 16 16:50:15.709717 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     return self._exec_single_context(
+[Sun Jul 16 16:50:15.709734 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+[Sun Jul 16 16:50:15.709752 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     self._handle_dbapi_exception(
+[Sun Jul 16 16:50:15.709770 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+[Sun Jul 16 16:50:15.709789 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[Sun Jul 16 16:50:15.709807 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:50:15.709825 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     self.dialect.do_execute(
+[Sun Jul 16 16:50:15.709842 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:50:15.709860 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:50:15.709878 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:50:15.709896 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:50:15.709914 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:50:15.709932 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57973] (Background on this error at: https://sqlalche.me/e/20/e3q8)
+[Sun Jul 16 16:50:50.311441 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] [2023-07-16 16:50:50,306] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 16:50:50.311587 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] Traceback (most recent call last):
+[Sun Jul 16 16:50:50.311621 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:50:50.311694 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     self.dialect.do_execute(
+[Sun Jul 16 16:50:50.311723 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:50:50.311752 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:50:50.311778 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Jul 16 16:50:50.311804 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] 
+[Sun Jul 16 16:50:50.311828 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] The above exception was the direct cause of the following exception:
+[Sun Jul 16 16:50:50.311854 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] 
+[Sun Jul 16 16:50:50.311879 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] Traceback (most recent call last):
+[Sun Jul 16 16:50:50.311904 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:50:50.311931 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     response = self.full_dispatch_request()
+[Sun Jul 16 16:50:50.311958 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:50:50.311985 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:50:50.312012 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:50:50.312039 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     rv = self.dispatch_request()
+[Sun Jul 16 16:50:50.312064 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:50:50.312092 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:50:50.312118 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 16:50:50.312144 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     db.session.commit()
+[Sun Jul 16 16:50:50.312169 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 16:50:50.312196 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     return self._proxied.commit()
+[Sun Jul 16 16:50:50.312222 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 16:50:50.312249 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     trans.commit(_to_root=True)
+[Sun Jul 16 16:50:50.312275 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "<string>", line 2, in commit
+[Sun Jul 16 16:50:50.312301 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:50:50.312328 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:50:50.312374 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1236, in commit
+[Sun Jul 16 16:50:50.312402 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     self._prepare_impl()
+[Sun Jul 16 16:50:50.312427 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "<string>", line 2, in _prepare_impl
+[Sun Jul 16 16:50:50.312491 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:50:50.312528 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:50:50.312555 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+[Sun Jul 16 16:50:50.312582 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     self.session.flush()
+[Sun Jul 16 16:50:50.312608 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 16:50:50.312634 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     self._flush(objects)
+[Sun Jul 16 16:50:50.312660 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4299, in _flush
+[Sun Jul 16 16:50:50.312687 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     transaction.rollback(_capture_exception=True)
+[Sun Jul 16 16:50:50.312713 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+[Sun Jul 16 16:50:50.312740 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     raise exc_value.with_traceback(exc_tb)
+[Sun Jul 16 16:50:50.312765 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+[Sun Jul 16 16:50:50.312792 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     flush_context.execute()
+[Sun Jul 16 16:50:50.312817 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[Sun Jul 16 16:50:50.312844 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     rec.execute(self)
+[Sun Jul 16 16:50:50.312869 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[Sun Jul 16 16:50:50.312896 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     util.preloaded.orm_persistence.save_obj(
+[Sun Jul 16 16:50:50.312923 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[Sun Jul 16 16:50:50.312949 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     _emit_insert_statements(
+[Sun Jul 16 16:50:50.312975 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+[Sun Jul 16 16:50:50.313002 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     result = connection.execute(
+[Sun Jul 16 16:50:50.313027 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1412, in execute
+[Sun Jul 16 16:50:50.313085 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     return meth(
+[Sun Jul 16 16:50:50.313112 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+[Sun Jul 16 16:50:50.313139 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     return connection._execute_clauseelement(
+[Sun Jul 16 16:50:50.313165 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+[Sun Jul 16 16:50:50.313192 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     ret = self._execute_context(
+[Sun Jul 16 16:50:50.313218 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+[Sun Jul 16 16:50:50.313245 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     return self._exec_single_context(
+[Sun Jul 16 16:50:50.313271 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+[Sun Jul 16 16:50:50.313298 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     self._handle_dbapi_exception(
+[Sun Jul 16 16:50:50.313324 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+[Sun Jul 16 16:50:50.313352 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[Sun Jul 16 16:50:50.313378 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:50:50.313405 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     self.dialect.do_execute(
+[Sun Jul 16 16:50:50.313430 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:50:50.313458 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:50:50.313484 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:50:50.313511 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:50:50.313537 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:50:50.313563 2023] [wsgi:error] [pid 19705:tid 1947657216] [remote 192.168.0.108:57977] (Background on this error at: https://sqlalche.me/e/20/e3q8)
+[Sun Jul 16 16:51:02.874987 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979] [2023-07-16 16:51:02,855] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 16:51:02.875138 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979] Traceback (most recent call last):
+[Sun Jul 16 16:51:02.875169 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:51:02.875198 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     response = self.full_dispatch_request()
+[Sun Jul 16 16:51:02.875226 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:51:02.875299 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:51:02.875327 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:51:02.875356 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     rv = self.dispatch_request()
+[Sun Jul 16 16:51:02.875382 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:51:02.875410 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:51:02.875437 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 16:51:02.875464 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     plants = Plant.query.all()
+[Sun Jul 16 16:51:02.875491 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 16:51:02.875518 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     return self._iter().all()  # type: ignore
+[Sun Jul 16 16:51:02.875545 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 16:51:02.875572 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 16:51:02.875600 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:51:02.875627 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     return self._execute_internal(
+[Sun Jul 16 16:51:02.875654 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:51:02.875681 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:51:02.875708 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:51:02.875737 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:51:02.875763 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:51:02.875789 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:51:02.875816 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:51:02.875843 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:51:02.875872 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:51:02.875904 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:51:02.875960 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:51:02.875989 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:51:02.876016 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57979] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:51:12.915846 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981] [2023-07-16 16:51:12,895] ERROR in app: Exception on /plants/1 [GET]
+[Sun Jul 16 16:51:12.915984 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981] Traceback (most recent call last):
+[Sun Jul 16 16:51:12.916019 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:51:12.916053 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     response = self.full_dispatch_request()
+[Sun Jul 16 16:51:12.916084 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:51:12.916117 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:51:12.916147 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:51:12.916178 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     rv = self.dispatch_request()
+[Sun Jul 16 16:51:12.916208 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:51:12.916241 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:51:12.916272 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/var/www/basic-flask-app/app.py", line 39, in get_plant
+[Sun Jul 16 16:51:12.916303 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     plant = Plant.query.get_or_404(id)
+[Sun Jul 16 16:51:12.916332 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/flask_sqlalchemy/query.py", line 30, in get_or_404
+[Sun Jul 16 16:51:12.916365 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     rv = self.get(ident)
+[Sun Jul 16 16:51:12.916394 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "<string>", line 2, in get
+[Sun Jul 16 16:51:12.916424 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+[Sun Jul 16 16:51:12.916455 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     return fn(*args, **kwargs)  # type: ignore[no-any-return]
+[Sun Jul 16 16:51:12.916487 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1130, in get
+[Sun Jul 16 16:51:12.916518 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     return self._get_impl(ident, loading.load_on_pk_identity)
+[Sun Jul 16 16:51:12.916548 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+[Sun Jul 16 16:51:12.916629 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     return self.session._get_impl(
+[Sun Jul 16 16:51:12.916660 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+[Sun Jul 16 16:51:12.916691 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     return db_load_fn(
+[Sun Jul 16 16:51:12.916722 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+[Sun Jul 16 16:51:12.916753 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     session.execute(
+[Sun Jul 16 16:51:12.916782 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:51:12.916814 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     return self._execute_internal(
+[Sun Jul 16 16:51:12.916844 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:51:12.916876 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:51:12.916906 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:51:12.916939 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:51:12.916970 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:51:12.917000 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:51:12.917032 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:51:12.917063 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:51:12.917096 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:51:12.917128 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:51:12.917166 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:51:12.917196 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:51:12.917228 2023] [wsgi:error] [pid 19705:tid 1964442624] [remote 192.168.0.108:57981] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:51:56.464626 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] [2023-07-16 16:51:56,404] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 16:51:56.464863 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] Traceback (most recent call last):
+[Sun Jul 16 16:51:56.464906 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:51:56.464994 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     self.dialect.do_execute(
+[Sun Jul 16 16:51:56.465031 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:51:56.465071 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:51:56.465106 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Jul 16 16:51:56.465140 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] 
+[Sun Jul 16 16:51:56.465174 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] The above exception was the direct cause of the following exception:
+[Sun Jul 16 16:51:56.465209 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] 
+[Sun Jul 16 16:51:56.465241 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] Traceback (most recent call last):
+[Sun Jul 16 16:51:56.465275 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:51:56.465311 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     response = self.full_dispatch_request()
+[Sun Jul 16 16:51:56.465346 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:51:56.465382 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:51:56.465417 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:51:56.465453 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     rv = self.dispatch_request()
+[Sun Jul 16 16:51:56.465487 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:51:56.465524 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:51:56.465560 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 16:51:56.465595 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     db.session.commit()
+[Sun Jul 16 16:51:56.465630 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 16:51:56.465666 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     return self._proxied.commit()
+[Sun Jul 16 16:51:56.465700 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 16:51:56.465736 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     trans.commit(_to_root=True)
+[Sun Jul 16 16:51:56.465770 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "<string>", line 2, in commit
+[Sun Jul 16 16:51:56.465804 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:51:56.465840 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:51:56.465903 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1236, in commit
+[Sun Jul 16 16:51:56.465941 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     self._prepare_impl()
+[Sun Jul 16 16:51:56.465974 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "<string>", line 2, in _prepare_impl
+[Sun Jul 16 16:51:56.466009 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:51:56.466045 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:51:56.466080 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+[Sun Jul 16 16:51:56.466116 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     self.session.flush()
+[Sun Jul 16 16:51:56.466150 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 16:51:56.466185 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     self._flush(objects)
+[Sun Jul 16 16:51:56.466219 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4299, in _flush
+[Sun Jul 16 16:51:56.466255 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     transaction.rollback(_capture_exception=True)
+[Sun Jul 16 16:51:56.466291 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+[Sun Jul 16 16:51:56.466327 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     raise exc_value.with_traceback(exc_tb)
+[Sun Jul 16 16:51:56.466362 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+[Sun Jul 16 16:51:56.466398 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     flush_context.execute()
+[Sun Jul 16 16:51:56.466432 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[Sun Jul 16 16:51:56.466468 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     rec.execute(self)
+[Sun Jul 16 16:51:56.466502 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[Sun Jul 16 16:51:56.466538 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     util.preloaded.orm_persistence.save_obj(
+[Sun Jul 16 16:51:56.466573 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[Sun Jul 16 16:51:56.466609 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     _emit_insert_statements(
+[Sun Jul 16 16:51:56.466643 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+[Sun Jul 16 16:51:56.466679 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     result = connection.execute(
+[Sun Jul 16 16:51:56.466713 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1412, in execute
+[Sun Jul 16 16:51:56.466776 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     return meth(
+[Sun Jul 16 16:51:56.466811 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+[Sun Jul 16 16:51:56.466848 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     return connection._execute_clauseelement(
+[Sun Jul 16 16:51:56.466883 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+[Sun Jul 16 16:51:56.466920 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     ret = self._execute_context(
+[Sun Jul 16 16:51:56.466954 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+[Sun Jul 16 16:51:56.466991 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     return self._exec_single_context(
+[Sun Jul 16 16:51:56.467025 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+[Sun Jul 16 16:51:56.467062 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     self._handle_dbapi_exception(
+[Sun Jul 16 16:51:56.467096 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+[Sun Jul 16 16:51:56.467133 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[Sun Jul 16 16:51:56.467169 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:51:56.467205 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     self.dialect.do_execute(
+[Sun Jul 16 16:51:56.467239 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:51:56.467275 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:51:56.467310 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:51:56.467347 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:51:56.467382 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:51:56.467417 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57987] (Background on this error at: https://sqlalche.me/e/20/e3q8)
+[Sun Jul 16 16:52:18.900240 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993] [2023-07-16 16:52:18,888] ERROR in app: Exception on /plants/1 [DELETE]
+[Sun Jul 16 16:52:18.900391 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993] Traceback (most recent call last):
+[Sun Jul 16 16:52:18.900419 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:52:18.900446 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     response = self.full_dispatch_request()
+[Sun Jul 16 16:52:18.900471 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:52:18.900533 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:52:18.900558 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:52:18.900583 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     rv = self.dispatch_request()
+[Sun Jul 16 16:52:18.900606 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:52:18.900631 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:52:18.900655 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/var/www/basic-flask-app/app.py", line 54, in delete_plant
+[Sun Jul 16 16:52:18.900679 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     plant = Plant.query.get(id)
+[Sun Jul 16 16:52:18.900702 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "<string>", line 2, in get
+[Sun Jul 16 16:52:18.900725 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+[Sun Jul 16 16:52:18.900750 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     return fn(*args, **kwargs)  # type: ignore[no-any-return]
+[Sun Jul 16 16:52:18.900773 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1130, in get
+[Sun Jul 16 16:52:18.900798 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     return self._get_impl(ident, loading.load_on_pk_identity)
+[Sun Jul 16 16:52:18.900821 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+[Sun Jul 16 16:52:18.900846 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     return self.session._get_impl(
+[Sun Jul 16 16:52:18.900868 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+[Sun Jul 16 16:52:18.900893 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     return db_load_fn(
+[Sun Jul 16 16:52:18.900916 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+[Sun Jul 16 16:52:18.900940 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     session.execute(
+[Sun Jul 16 16:52:18.900963 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:52:18.900987 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     return self._execute_internal(
+[Sun Jul 16 16:52:18.901010 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:52:18.901034 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:52:18.901057 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:52:18.901082 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:52:18.901125 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:52:18.901149 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:52:18.901174 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:52:18.901198 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:52:18.901223 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:52:18.901252 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:52:18.901282 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:52:18.901305 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:52:18.901330 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57993] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:52:57.893695 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999] [2023-07-16 16:52:57,891] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 16:52:57.893852 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999] Traceback (most recent call last):
+[Sun Jul 16 16:52:57.893884 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:52:57.893913 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     response = self.full_dispatch_request()
+[Sun Jul 16 16:52:57.893940 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:52:57.893969 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:52:57.893995 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:52:57.894023 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     rv = self.dispatch_request()
+[Sun Jul 16 16:52:57.894049 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:52:57.894077 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:52:57.894104 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 16:52:57.894131 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     plants = Plant.query.all()
+[Sun Jul 16 16:52:57.894157 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 16:52:57.894229 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     return self._iter().all()  # type: ignore
+[Sun Jul 16 16:52:57.894257 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 16:52:57.894285 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 16:52:57.894312 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:52:57.894339 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     return self._execute_internal(
+[Sun Jul 16 16:52:57.894365 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:52:57.894392 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:52:57.894418 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:52:57.894446 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:52:57.894472 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:52:57.894499 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:52:57.894527 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:52:57.894554 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:52:57.894581 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:52:57.894609 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:52:57.894642 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:52:57.894668 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:52:57.894695 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:57999] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:53:17.256666 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003] [2023-07-16 16:53:17,251] ERROR in app: Exception on /plants/1 [GET]
+[Sun Jul 16 16:53:17.256841 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003] Traceback (most recent call last):
+[Sun Jul 16 16:53:17.256883 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:53:17.256922 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     response = self.full_dispatch_request()
+[Sun Jul 16 16:53:17.257007 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:53:17.257046 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:53:17.257082 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:53:17.257118 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     rv = self.dispatch_request()
+[Sun Jul 16 16:53:17.257152 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:53:17.257190 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:53:17.257226 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/var/www/basic-flask-app/app.py", line 39, in get_plant
+[Sun Jul 16 16:53:17.257261 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     plant = Plant.query.get_or_404(id)
+[Sun Jul 16 16:53:17.257296 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/flask_sqlalchemy/query.py", line 30, in get_or_404
+[Sun Jul 16 16:53:17.257333 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     rv = self.get(ident)
+[Sun Jul 16 16:53:17.257367 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "<string>", line 2, in get
+[Sun Jul 16 16:53:17.257402 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+[Sun Jul 16 16:53:17.257439 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     return fn(*args, **kwargs)  # type: ignore[no-any-return]
+[Sun Jul 16 16:53:17.257475 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1130, in get
+[Sun Jul 16 16:53:17.257511 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     return self._get_impl(ident, loading.load_on_pk_identity)
+[Sun Jul 16 16:53:17.257547 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+[Sun Jul 16 16:53:17.257583 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     return self.session._get_impl(
+[Sun Jul 16 16:53:17.257618 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+[Sun Jul 16 16:53:17.257654 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     return db_load_fn(
+[Sun Jul 16 16:53:17.257689 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+[Sun Jul 16 16:53:17.257726 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     session.execute(
+[Sun Jul 16 16:53:17.257760 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:53:17.257796 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     return self._execute_internal(
+[Sun Jul 16 16:53:17.257831 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:53:17.257895 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:53:17.257933 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:53:17.257970 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:53:17.258006 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:53:17.258042 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:53:17.258078 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:53:17.258114 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:53:17.258151 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:53:17.258189 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:53:17.258232 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:53:17.258267 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:53:17.258303 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58003] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:53:42.528931 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007] [2023-07-16 16:53:42,525] ERROR in app: Exception on /plants/2 [GET]
+[Sun Jul 16 16:53:42.529111 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007] Traceback (most recent call last):
+[Sun Jul 16 16:53:42.529154 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:53:42.529193 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     response = self.full_dispatch_request()
+[Sun Jul 16 16:53:42.529230 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:53:42.529268 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:53:42.529303 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:53:42.529340 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     rv = self.dispatch_request()
+[Sun Jul 16 16:53:42.529375 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:53:42.529413 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:53:42.529449 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/var/www/basic-flask-app/app.py", line 39, in get_plant
+[Sun Jul 16 16:53:42.529539 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     plant = Plant.query.get_or_404(id)
+[Sun Jul 16 16:53:42.529576 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/flask_sqlalchemy/query.py", line 30, in get_or_404
+[Sun Jul 16 16:53:42.529613 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     rv = self.get(ident)
+[Sun Jul 16 16:53:42.529648 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "<string>", line 2, in get
+[Sun Jul 16 16:53:42.529683 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+[Sun Jul 16 16:53:42.529720 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     return fn(*args, **kwargs)  # type: ignore[no-any-return]
+[Sun Jul 16 16:53:42.529756 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1130, in get
+[Sun Jul 16 16:53:42.529793 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     return self._get_impl(ident, loading.load_on_pk_identity)
+[Sun Jul 16 16:53:42.529828 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+[Sun Jul 16 16:53:42.529865 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     return self.session._get_impl(
+[Sun Jul 16 16:53:42.529899 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+[Sun Jul 16 16:53:42.529936 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     return db_load_fn(
+[Sun Jul 16 16:53:42.529970 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+[Sun Jul 16 16:53:42.530006 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     session.execute(
+[Sun Jul 16 16:53:42.530040 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:53:42.530077 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     return self._execute_internal(
+[Sun Jul 16 16:53:42.530111 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:53:42.530148 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:53:42.530184 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:53:42.530221 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:53:42.530256 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:53:42.530291 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:53:42.530328 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:53:42.530365 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:53:42.530431 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:53:42.530470 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:53:42.530514 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:53:42.530549 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:53:42.530586 2023] [wsgi:error] [pid 19811:tid 1964155904] [remote 192.168.0.108:58007] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:55:54.570066 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] [2023-07-16 16:55:54,521] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 16:55:54.570275 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] Traceback (most recent call last):
+[Sun Jul 16 16:55:54.570307 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:55:54.570337 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     self.dialect.do_execute(
+[Sun Jul 16 16:55:54.570364 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:55:54.570393 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:55:54.570419 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Jul 16 16:55:54.570445 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] 
+[Sun Jul 16 16:55:54.570470 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] The above exception was the direct cause of the following exception:
+[Sun Jul 16 16:55:54.570496 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] 
+[Sun Jul 16 16:55:54.570522 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] Traceback (most recent call last):
+[Sun Jul 16 16:55:54.570548 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:55:54.570575 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     response = self.full_dispatch_request()
+[Sun Jul 16 16:55:54.570601 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:55:54.570629 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:55:54.570656 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:55:54.570683 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     rv = self.dispatch_request()
+[Sun Jul 16 16:55:54.570709 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:55:54.570777 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:55:54.570806 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 16:55:54.570832 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     db.session.commit()
+[Sun Jul 16 16:55:54.570857 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 16:55:54.570885 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     return self._proxied.commit()
+[Sun Jul 16 16:55:54.570910 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 16:55:54.570937 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     trans.commit(_to_root=True)
+[Sun Jul 16 16:55:54.570961 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "<string>", line 2, in commit
+[Sun Jul 16 16:55:54.570987 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:55:54.571014 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:55:54.571040 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1236, in commit
+[Sun Jul 16 16:55:54.571066 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     self._prepare_impl()
+[Sun Jul 16 16:55:54.571091 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "<string>", line 2, in _prepare_impl
+[Sun Jul 16 16:55:54.571117 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 16:55:54.571144 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 16:55:54.571170 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+[Sun Jul 16 16:55:54.571197 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     self.session.flush()
+[Sun Jul 16 16:55:54.571222 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 16:55:54.571249 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     self._flush(objects)
+[Sun Jul 16 16:55:54.571275 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4299, in _flush
+[Sun Jul 16 16:55:54.571302 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     transaction.rollback(_capture_exception=True)
+[Sun Jul 16 16:55:54.571329 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+[Sun Jul 16 16:55:54.571356 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     raise exc_value.with_traceback(exc_tb)
+[Sun Jul 16 16:55:54.571382 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+[Sun Jul 16 16:55:54.571431 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     flush_context.execute()
+[Sun Jul 16 16:55:54.571458 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[Sun Jul 16 16:55:54.571485 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     rec.execute(self)
+[Sun Jul 16 16:55:54.571511 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[Sun Jul 16 16:55:54.571538 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     util.preloaded.orm_persistence.save_obj(
+[Sun Jul 16 16:55:54.571564 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[Sun Jul 16 16:55:54.571591 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     _emit_insert_statements(
+[Sun Jul 16 16:55:54.571616 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+[Sun Jul 16 16:55:54.571645 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     result = connection.execute(
+[Sun Jul 16 16:55:54.571670 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1412, in execute
+[Sun Jul 16 16:55:54.571697 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     return meth(
+[Sun Jul 16 16:55:54.571722 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+[Sun Jul 16 16:55:54.571749 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     return connection._execute_clauseelement(
+[Sun Jul 16 16:55:54.571776 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+[Sun Jul 16 16:55:54.571804 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     ret = self._execute_context(
+[Sun Jul 16 16:55:54.571829 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+[Sun Jul 16 16:55:54.571856 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     return self._exec_single_context(
+[Sun Jul 16 16:55:54.571882 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+[Sun Jul 16 16:55:54.571910 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     self._handle_dbapi_exception(
+[Sun Jul 16 16:55:54.571936 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+[Sun Jul 16 16:55:54.571963 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[Sun Jul 16 16:55:54.571990 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 16:55:54.572018 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     self.dialect.do_execute(
+[Sun Jul 16 16:55:54.572043 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 16:55:54.572091 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021]     cursor.execute(statement, parameters)
+[Sun Jul 16 16:55:54.572119 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:55:54.572147 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:55:54.572173 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:55:54.572199 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58021] (Background on this error at: https://sqlalche.me/e/20/e3q8)
+[Sun Jul 16 16:59:49.419571 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031] [2023-07-16 16:59:49,409] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 16:59:49.419747 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031] Traceback (most recent call last):
+[Sun Jul 16 16:59:49.419789 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:59:49.419828 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     response = self.full_dispatch_request()
+[Sun Jul 16 16:59:49.419864 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:59:49.419902 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:59:49.419937 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:59:49.419975 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     rv = self.dispatch_request()
+[Sun Jul 16 16:59:49.420010 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:59:49.420046 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:59:49.420083 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 16:59:49.420118 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     plants = Plant.query.all()
+[Sun Jul 16 16:59:49.420153 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 16:59:49.420191 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     return self._iter().all()  # type: ignore
+[Sun Jul 16 16:59:49.420226 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 16:59:49.420263 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 16:59:49.420299 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:59:49.420336 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     return self._execute_internal(
+[Sun Jul 16 16:59:49.420371 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:59:49.420457 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:59:49.420494 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:59:49.420532 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:59:49.420568 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:59:49.420603 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:59:49.420639 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:59:49.420674 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:59:49.420713 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:59:49.420754 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:59:49.420798 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:59:49.420834 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:59:49.420870 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58031] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:59:51.314764 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032] [2023-07-16 16:59:51,311] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 16:59:51.314917 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032] Traceback (most recent call last):
+[Sun Jul 16 16:59:51.314959 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:59:51.314998 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     response = self.full_dispatch_request()
+[Sun Jul 16 16:59:51.315034 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:59:51.315072 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:59:51.315107 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:59:51.315143 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     rv = self.dispatch_request()
+[Sun Jul 16 16:59:51.315177 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:59:51.315215 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:59:51.315302 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 16:59:51.315340 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     plants = Plant.query.all()
+[Sun Jul 16 16:59:51.315374 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 16:59:51.315410 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     return self._iter().all()  # type: ignore
+[Sun Jul 16 16:59:51.315446 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 16:59:51.315482 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 16:59:51.315518 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:59:51.315554 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     return self._execute_internal(
+[Sun Jul 16 16:59:51.315590 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:59:51.315627 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:59:51.315662 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:59:51.315700 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:59:51.315735 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:59:51.315771 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:59:51.315807 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:59:51.315843 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:59:51.315880 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:59:51.315917 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:59:51.315962 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:59:51.315997 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:59:51.316032 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58032] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:59:52.946196 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033] [2023-07-16 16:59:52,943] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 16:59:52.946400 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033] Traceback (most recent call last):
+[Sun Jul 16 16:59:52.946443 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:59:52.946481 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     response = self.full_dispatch_request()
+[Sun Jul 16 16:59:52.946517 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:59:52.946556 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:59:52.946591 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:59:52.946627 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     rv = self.dispatch_request()
+[Sun Jul 16 16:59:52.946662 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:59:52.946699 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:59:52.946735 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 16:59:52.946770 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     plants = Plant.query.all()
+[Sun Jul 16 16:59:52.946806 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 16:59:52.946842 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     return self._iter().all()  # type: ignore
+[Sun Jul 16 16:59:52.946877 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 16:59:52.946914 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 16:59:52.946950 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:59:52.946986 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     return self._execute_internal(
+[Sun Jul 16 16:59:52.947021 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:59:52.947059 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:59:52.947094 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:59:52.947132 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:59:52.947167 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:59:52.947203 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:59:52.947239 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:59:52.947305 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:59:52.947345 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:59:52.947382 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:59:52.947426 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:59:52.947462 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:59:52.947498 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58033] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 16:59:54.370155 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034] [2023-07-16 16:59:54,367] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 16:59:54.370323 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034] Traceback (most recent call last):
+[Sun Jul 16 16:59:54.370365 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 16:59:54.370403 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     response = self.full_dispatch_request()
+[Sun Jul 16 16:59:54.370440 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 16:59:54.370477 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     rv = self.handle_user_exception(e)
+[Sun Jul 16 16:59:54.370512 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 16:59:54.370549 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     rv = self.dispatch_request()
+[Sun Jul 16 16:59:54.370585 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 16:59:54.370621 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 16:59:54.370657 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 16:59:54.370693 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     plants = Plant.query.all()
+[Sun Jul 16 16:59:54.370728 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 16:59:54.370764 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     return self._iter().all()  # type: ignore
+[Sun Jul 16 16:59:54.370800 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 16:59:54.370837 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 16:59:54.370872 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 16:59:54.370962 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     return self._execute_internal(
+[Sun Jul 16 16:59:54.370999 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2131, in _execute_internal
+[Sun Jul 16 16:59:54.371036 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     conn = self._connection_for_bind(bind)
+[Sun Jul 16 16:59:54.371072 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1998, in _connection_for_bind
+[Sun Jul 16 16:59:54.371109 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     return trans._connection_for_bind(engine, execution_options)
+[Sun Jul 16 16:59:54.371144 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "<string>", line 2, in _connection_for_bind
+[Sun Jul 16 16:59:54.371180 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 16:59:54.371217 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 16:59:54.371253 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 16:59:54.371291 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 16:59:54.371330 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 16:59:54.371373 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 16:59:54.371408 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 16:59:54.371445 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58034] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 17:00:27.026828 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039] [2023-07-16 17:00:27,024] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 17:00:27.026975 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039] Traceback (most recent call last):
+[Sun Jul 16 17:00:27.027007 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:00:27.027037 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     response = self.full_dispatch_request()
+[Sun Jul 16 17:00:27.027063 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:00:27.027093 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:00:27.027119 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:00:27.027147 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     rv = self.dispatch_request()
+[Sun Jul 16 17:00:27.027219 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:00:27.027248 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:00:27.027275 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 17:00:27.027301 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     db.session.commit()
+[Sun Jul 16 17:00:27.027328 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 17:00:27.027355 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     return self._proxied.commit()
+[Sun Jul 16 17:00:27.027380 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 17:00:27.027407 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     trans.commit(_to_root=True)
+[Sun Jul 16 17:00:27.027431 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "<string>", line 2, in commit
+[Sun Jul 16 17:00:27.027458 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 17:00:27.027485 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 17:00:27.027512 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 17:00:27.027539 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 17:00:27.027567 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:00:27.027600 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:00:27.027627 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:00:27.027653 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58039] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 17:00:50.692125 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] [2023-07-16 17:00:50,686] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 17:00:50.692280 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] Traceback (most recent call last):
+[Sun Jul 16 17:00:50.692316 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 17:00:50.692350 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     self.dialect.do_execute(
+[Sun Jul 16 17:00:50.692382 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 17:00:50.692513 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     cursor.execute(statement, parameters)
+[Sun Jul 16 17:00:50.692555 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Jul 16 17:00:50.692585 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] 
+[Sun Jul 16 17:00:50.692614 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] The above exception was the direct cause of the following exception:
+[Sun Jul 16 17:00:50.692644 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] 
+[Sun Jul 16 17:00:50.692672 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] Traceback (most recent call last):
+[Sun Jul 16 17:00:50.692701 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:00:50.692731 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     response = self.full_dispatch_request()
+[Sun Jul 16 17:00:50.692762 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:00:50.692793 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:00:50.692822 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:00:50.692853 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     rv = self.dispatch_request()
+[Sun Jul 16 17:00:50.692882 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:00:50.692913 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:00:50.692943 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 17:00:50.692973 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     db.session.commit()
+[Sun Jul 16 17:00:50.693002 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 17:00:50.693033 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     return self._proxied.commit()
+[Sun Jul 16 17:00:50.693063 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 17:00:50.693094 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     trans.commit(_to_root=True)
+[Sun Jul 16 17:00:50.693123 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "<string>", line 2, in commit
+[Sun Jul 16 17:00:50.693152 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 17:00:50.693183 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 17:00:50.693212 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1236, in commit
+[Sun Jul 16 17:00:50.693243 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     self._prepare_impl()
+[Sun Jul 16 17:00:50.693271 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "<string>", line 2, in _prepare_impl
+[Sun Jul 16 17:00:50.693327 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 17:00:50.693359 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 17:00:50.693389 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+[Sun Jul 16 17:00:50.693419 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     self.session.flush()
+[Sun Jul 16 17:00:50.693449 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:00:50.693479 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     self._flush(objects)
+[Sun Jul 16 17:00:50.693509 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4299, in _flush
+[Sun Jul 16 17:00:50.693540 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     transaction.rollback(_capture_exception=True)
+[Sun Jul 16 17:00:50.693570 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+[Sun Jul 16 17:00:50.693601 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     raise exc_value.with_traceback(exc_tb)
+[Sun Jul 16 17:00:50.693630 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+[Sun Jul 16 17:00:50.693660 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     flush_context.execute()
+[Sun Jul 16 17:00:50.693689 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[Sun Jul 16 17:00:50.693720 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     rec.execute(self)
+[Sun Jul 16 17:00:50.693749 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[Sun Jul 16 17:00:50.693780 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     util.preloaded.orm_persistence.save_obj(
+[Sun Jul 16 17:00:50.693810 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[Sun Jul 16 17:00:50.693840 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     _emit_insert_statements(
+[Sun Jul 16 17:00:50.693870 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+[Sun Jul 16 17:00:50.693901 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     result = connection.execute(
+[Sun Jul 16 17:00:50.693930 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1412, in execute
+[Sun Jul 16 17:00:50.693961 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     return meth(
+[Sun Jul 16 17:00:50.693990 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+[Sun Jul 16 17:00:50.694021 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     return connection._execute_clauseelement(
+[Sun Jul 16 17:00:50.694075 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+[Sun Jul 16 17:00:50.694107 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     ret = self._execute_context(
+[Sun Jul 16 17:00:50.694137 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+[Sun Jul 16 17:00:50.694169 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     return self._exec_single_context(
+[Sun Jul 16 17:00:50.694198 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+[Sun Jul 16 17:00:50.694230 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     self._handle_dbapi_exception(
+[Sun Jul 16 17:00:50.694259 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+[Sun Jul 16 17:00:50.694291 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[Sun Jul 16 17:00:50.694322 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 17:00:50.694353 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     self.dialect.do_execute(
+[Sun Jul 16 17:00:50.694382 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 17:00:50.694413 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041]     cursor.execute(statement, parameters)
+[Sun Jul 16 17:00:50.694443 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:00:50.694473 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:00:50.694503 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:00:50.694533 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58041] (Background on this error at: https://sqlalche.me/e/20/e3q8)
+[Sun Jul 16 17:01:06.874214 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043] [2023-07-16 17:01:06,852] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 17:01:06.888008 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043] Traceback (most recent call last):
+[Sun Jul 16 17:01:06.888104 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:01:06.888146 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     response = self.full_dispatch_request()
+[Sun Jul 16 17:01:06.888183 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:01:06.888221 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:01:06.888256 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:01:06.888293 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     rv = self.dispatch_request()
+[Sun Jul 16 17:01:06.888370 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:01:06.888409 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:01:06.888445 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 17:01:06.888480 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     plants = Plant.query.all()
+[Sun Jul 16 17:01:06.888514 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 17:01:06.888550 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     return self._iter().all()  # type: ignore
+[Sun Jul 16 17:01:06.888585 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 17:01:06.888622 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 17:01:06.888658 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 17:01:06.888694 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     return self._execute_internal(
+[Sun Jul 16 17:01:06.888728 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+[Sun Jul 16 17:01:06.888764 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     ) = compile_state_cls.orm_pre_session_exec(
+[Sun Jul 16 17:01:06.888799 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+[Sun Jul 16 17:01:06.888836 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     session._autoflush()
+[Sun Jul 16 17:01:06.888870 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+[Sun Jul 16 17:01:06.888906 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     self.flush()
+[Sun Jul 16 17:01:06.888940 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:01:06.888975 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     self._flush(objects)
+[Sun Jul 16 17:01:06.889009 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4255, in _flush
+[Sun Jul 16 17:01:06.889045 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     flush_context.transaction = transaction = self._autobegin_t()._begin()
+[Sun Jul 16 17:01:06.889080 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "<string>", line 2, in _begin
+[Sun Jul 16 17:01:06.889114 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 17:01:06.889150 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 17:01:06.889186 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 17:01:06.889251 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 17:01:06.889290 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:01:06.889334 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:01:06.889369 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:01:06.889404 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58043] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 17:02:35.950643 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] [2023-07-16 17:02:35,944] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 17:02:35.950819 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] Traceback (most recent call last):
+[Sun Jul 16 17:02:35.950862 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 17:02:35.950902 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     self.dialect.do_execute(
+[Sun Jul 16 17:02:35.950938 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 17:02:35.950974 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     cursor.execute(statement, parameters)
+[Sun Jul 16 17:02:35.951009 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Jul 16 17:02:35.951044 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] 
+[Sun Jul 16 17:02:35.951078 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] The above exception was the direct cause of the following exception:
+[Sun Jul 16 17:02:35.951112 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] 
+[Sun Jul 16 17:02:35.951144 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] Traceback (most recent call last):
+[Sun Jul 16 17:02:35.951179 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:02:35.951215 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     response = self.full_dispatch_request()
+[Sun Jul 16 17:02:35.951250 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:02:35.951286 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:02:35.951321 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:02:35.951357 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     rv = self.dispatch_request()
+[Sun Jul 16 17:02:35.951391 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:02:35.951477 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:02:35.951515 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 17:02:35.951550 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     db.session.commit()
+[Sun Jul 16 17:02:35.951584 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 17:02:35.951620 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     return self._proxied.commit()
+[Sun Jul 16 17:02:35.951654 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 17:02:35.951690 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     trans.commit(_to_root=True)
+[Sun Jul 16 17:02:35.951724 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "<string>", line 2, in commit
+[Sun Jul 16 17:02:35.951759 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 17:02:35.951795 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 17:02:35.951829 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1236, in commit
+[Sun Jul 16 17:02:35.951865 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     self._prepare_impl()
+[Sun Jul 16 17:02:35.951897 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "<string>", line 2, in _prepare_impl
+[Sun Jul 16 17:02:35.951932 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 17:02:35.951968 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 17:02:35.952002 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+[Sun Jul 16 17:02:35.952038 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     self.session.flush()
+[Sun Jul 16 17:02:35.952072 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:02:35.952108 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     self._flush(objects)
+[Sun Jul 16 17:02:35.952142 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4299, in _flush
+[Sun Jul 16 17:02:35.952178 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     transaction.rollback(_capture_exception=True)
+[Sun Jul 16 17:02:35.952212 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+[Sun Jul 16 17:02:35.952248 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     raise exc_value.with_traceback(exc_tb)
+[Sun Jul 16 17:02:35.952282 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+[Sun Jul 16 17:02:35.952347 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     flush_context.execute()
+[Sun Jul 16 17:02:35.952383 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[Sun Jul 16 17:02:35.952419 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     rec.execute(self)
+[Sun Jul 16 17:02:35.952647 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[Sun Jul 16 17:02:35.952703 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     util.preloaded.orm_persistence.save_obj(
+[Sun Jul 16 17:02:35.952739 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[Sun Jul 16 17:02:35.952775 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     _emit_insert_statements(
+[Sun Jul 16 17:02:35.952810 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+[Sun Jul 16 17:02:35.952847 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     result = connection.execute(
+[Sun Jul 16 17:02:35.952881 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1412, in execute
+[Sun Jul 16 17:02:35.952917 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     return meth(
+[Sun Jul 16 17:02:35.952951 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+[Sun Jul 16 17:02:35.952988 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     return connection._execute_clauseelement(
+[Sun Jul 16 17:02:35.953022 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+[Sun Jul 16 17:02:35.953059 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     ret = self._execute_context(
+[Sun Jul 16 17:02:35.953093 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+[Sun Jul 16 17:02:35.953129 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     return self._exec_single_context(
+[Sun Jul 16 17:02:35.953163 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+[Sun Jul 16 17:02:35.953199 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     self._handle_dbapi_exception(
+[Sun Jul 16 17:02:35.953234 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+[Sun Jul 16 17:02:35.953271 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[Sun Jul 16 17:02:35.953306 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 17:02:35.953342 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     self.dialect.do_execute(
+[Sun Jul 16 17:02:35.953376 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 17:02:35.953455 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058]     cursor.execute(statement, parameters)
+[Sun Jul 16 17:02:35.953492 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:02:35.953528 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:02:35.953563 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:02:35.953597 2023] [wsgi:error] [pid 19974:tid 1931023360] [remote 192.168.0.108:58058] (Background on this error at: https://sqlalche.me/e/20/e3q8)
+[Sun Jul 16 17:04:35.475451 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077] [2023-07-16 17:04:35,471] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 17:04:35.475636 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077] Traceback (most recent call last):
+[Sun Jul 16 17:04:35.475678 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:04:35.475717 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     response = self.full_dispatch_request()
+[Sun Jul 16 17:04:35.475754 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:04:35.475791 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:04:35.475825 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:04:35.475862 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     rv = self.dispatch_request()
+[Sun Jul 16 17:04:35.475896 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:04:35.475932 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:04:35.475967 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 17:04:35.476002 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     plants = Plant.query.all()
+[Sun Jul 16 17:04:35.476036 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 17:04:35.476072 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     return self._iter().all()  # type: ignore
+[Sun Jul 16 17:04:35.476108 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 17:04:35.476144 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 17:04:35.476181 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 17:04:35.476217 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     return self._execute_internal(
+[Sun Jul 16 17:04:35.476251 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+[Sun Jul 16 17:04:35.476337 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     ) = compile_state_cls.orm_pre_session_exec(
+[Sun Jul 16 17:04:35.476375 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+[Sun Jul 16 17:04:35.476412 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     session._autoflush()
+[Sun Jul 16 17:04:35.476446 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+[Sun Jul 16 17:04:35.476482 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     self.flush()
+[Sun Jul 16 17:04:35.476516 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:04:35.476551 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     self._flush(objects)
+[Sun Jul 16 17:04:35.476585 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4255, in _flush
+[Sun Jul 16 17:04:35.476621 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     flush_context.transaction = transaction = self._autobegin_t()._begin()
+[Sun Jul 16 17:04:35.476656 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "<string>", line 2, in _begin
+[Sun Jul 16 17:04:35.476691 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 17:04:35.476726 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 17:04:35.476762 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 17:04:35.476798 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 17:04:35.476835 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:04:35.476878 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:04:35.476912 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:04:35.476948 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58077] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 17:04:38.062737 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078] [2023-07-16 17:04:38,059] ERROR in app: Exception on /plants [GET]
+[Sun Jul 16 17:04:38.062888 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078] Traceback (most recent call last):
+[Sun Jul 16 17:04:38.062927 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:04:38.062965 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     response = self.full_dispatch_request()
+[Sun Jul 16 17:04:38.063001 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:04:38.063090 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:04:38.063127 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:04:38.063164 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     rv = self.dispatch_request()
+[Sun Jul 16 17:04:38.063198 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:04:38.063234 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:04:38.063269 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/var/www/basic-flask-app/app.py", line 29, in get_plants
+[Sun Jul 16 17:04:38.063304 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     plants = Plant.query.all()
+[Sun Jul 16 17:04:38.063337 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2692, in all
+[Sun Jul 16 17:04:38.063405 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     return self._iter().all()  # type: ignore
+[Sun Jul 16 17:04:38.063442 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+[Sun Jul 16 17:04:38.063479 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+[Sun Jul 16 17:04:38.063533 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 17:04:38.063570 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     return self._execute_internal(
+[Sun Jul 16 17:04:38.063605 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+[Sun Jul 16 17:04:38.063641 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     ) = compile_state_cls.orm_pre_session_exec(
+[Sun Jul 16 17:04:38.063676 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+[Sun Jul 16 17:04:38.063713 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     session._autoflush()
+[Sun Jul 16 17:04:38.063747 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+[Sun Jul 16 17:04:38.063783 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     self.flush()
+[Sun Jul 16 17:04:38.063816 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:04:38.063852 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     self._flush(objects)
+[Sun Jul 16 17:04:38.063885 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4255, in _flush
+[Sun Jul 16 17:04:38.063921 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     flush_context.transaction = transaction = self._autobegin_t()._begin()
+[Sun Jul 16 17:04:38.063956 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "<string>", line 2, in _begin
+[Sun Jul 16 17:04:38.064020 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 17:04:38.064058 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 17:04:38.064093 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 17:04:38.064130 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 17:04:38.064167 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:04:38.064210 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:04:38.064244 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:04:38.064280 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58078] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 17:09:50.347205 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219] [2023-07-16 17:09:50,340] ERROR in app: Exception on /plants/1 [GET]
+[Sun Jul 16 17:09:50.347360 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219] Traceback (most recent call last):
+[Sun Jul 16 17:09:50.347388 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:09:50.347415 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     response = self.full_dispatch_request()
+[Sun Jul 16 17:09:50.347438 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:09:50.347463 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:09:50.347487 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:09:50.347511 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     rv = self.dispatch_request()
+[Sun Jul 16 17:09:50.347534 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:09:50.347558 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:09:50.347582 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/var/www/basic-flask-app/app.py", line 39, in get_plant
+[Sun Jul 16 17:09:50.347606 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     plant = Plant.query.get_or_404(id)
+[Sun Jul 16 17:09:50.347629 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/flask_sqlalchemy/query.py", line 30, in get_or_404
+[Sun Jul 16 17:09:50.347653 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     rv = self.get(ident)
+[Sun Jul 16 17:09:50.347715 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "<string>", line 2, in get
+[Sun Jul 16 17:09:50.347740 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+[Sun Jul 16 17:09:50.347765 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     return fn(*args, **kwargs)  # type: ignore[no-any-return]
+[Sun Jul 16 17:09:50.347788 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1130, in get
+[Sun Jul 16 17:09:50.347812 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     return self._get_impl(ident, loading.load_on_pk_identity)
+[Sun Jul 16 17:09:50.347836 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+[Sun Jul 16 17:09:50.347860 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     return self.session._get_impl(
+[Sun Jul 16 17:09:50.347883 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+[Sun Jul 16 17:09:50.347906 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     return db_load_fn(
+[Sun Jul 16 17:09:50.347929 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+[Sun Jul 16 17:09:50.347953 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     session.execute(
+[Sun Jul 16 17:09:50.347976 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 17:09:50.347999 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     return self._execute_internal(
+[Sun Jul 16 17:09:50.348022 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+[Sun Jul 16 17:09:50.348047 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     ) = compile_state_cls.orm_pre_session_exec(
+[Sun Jul 16 17:09:50.348070 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+[Sun Jul 16 17:09:50.348095 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     session._autoflush()
+[Sun Jul 16 17:09:50.348117 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+[Sun Jul 16 17:09:50.348141 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     self.flush()
+[Sun Jul 16 17:09:50.348164 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:09:50.348187 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     self._flush(objects)
+[Sun Jul 16 17:09:50.348210 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4255, in _flush
+[Sun Jul 16 17:09:50.348233 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     flush_context.transaction = transaction = self._autobegin_t()._begin()
+[Sun Jul 16 17:09:50.348256 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "<string>", line 2, in _begin
+[Sun Jul 16 17:09:50.348309 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 17:09:50.348334 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 17:09:50.348359 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 17:09:50.348383 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 17:09:50.348408 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:09:50.348437 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:09:50.348460 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:09:50.348484 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58219] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 17:10:36.511954 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226] [2023-07-16 17:10:36,507] ERROR in app: Exception on /plants/0 [GET]
+[Sun Jul 16 17:10:36.512129 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226] Traceback (most recent call last):
+[Sun Jul 16 17:10:36.512171 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:10:36.512210 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     response = self.full_dispatch_request()
+[Sun Jul 16 17:10:36.512246 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:10:36.512283 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:10:36.512318 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:10:36.512354 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     rv = self.dispatch_request()
+[Sun Jul 16 17:10:36.512389 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:10:36.512426 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:10:36.512537 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/var/www/basic-flask-app/app.py", line 39, in get_plant
+[Sun Jul 16 17:10:36.512586 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     plant = Plant.query.get_or_404(id)
+[Sun Jul 16 17:10:36.512622 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/flask_sqlalchemy/query.py", line 30, in get_or_404
+[Sun Jul 16 17:10:36.512660 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     rv = self.get(ident)
+[Sun Jul 16 17:10:36.512693 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "<string>", line 2, in get
+[Sun Jul 16 17:10:36.512781 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+[Sun Jul 16 17:10:36.512820 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     return fn(*args, **kwargs)  # type: ignore[no-any-return]
+[Sun Jul 16 17:10:36.512856 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1130, in get
+[Sun Jul 16 17:10:36.512892 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     return self._get_impl(ident, loading.load_on_pk_identity)
+[Sun Jul 16 17:10:36.512926 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+[Sun Jul 16 17:10:36.512962 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     return self.session._get_impl(
+[Sun Jul 16 17:10:36.512996 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+[Sun Jul 16 17:10:36.513032 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     return db_load_fn(
+[Sun Jul 16 17:10:36.513065 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+[Sun Jul 16 17:10:36.513101 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     session.execute(
+[Sun Jul 16 17:10:36.513135 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2246, in execute
+[Sun Jul 16 17:10:36.513170 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     return self._execute_internal(
+[Sun Jul 16 17:10:36.513204 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2120, in _execute_internal
+[Sun Jul 16 17:10:36.513240 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     ) = compile_state_cls.orm_pre_session_exec(
+[Sun Jul 16 17:10:36.513275 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/context.py", line 543, in orm_pre_session_exec
+[Sun Jul 16 17:10:36.513311 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     session._autoflush()
+[Sun Jul 16 17:10:36.513344 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 2912, in _autoflush
+[Sun Jul 16 17:10:36.513380 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     self.flush()
+[Sun Jul 16 17:10:36.513413 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:10:36.513449 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     self._flush(objects)
+[Sun Jul 16 17:10:36.513482 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4255, in _flush
+[Sun Jul 16 17:10:36.513517 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     flush_context.transaction = transaction = self._autobegin_t()._begin()
+[Sun Jul 16 17:10:36.513552 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "<string>", line 2, in _begin
+[Sun Jul 16 17:10:36.513587 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 103, in _go
+[Sun Jul 16 17:10:36.513651 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     self._raise_for_prerequisite_state(fn.__name__, current_state)
+[Sun Jul 16 17:10:36.513689 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 909, in _raise_for_prerequisite_state
+[Sun Jul 16 17:10:36.513726 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226]     raise sa_exc.PendingRollbackError(
+[Sun Jul 16 17:10:36.513763 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226] sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:10:36.513806 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:10:36.513841 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226] [parameters: ('paradicsom', '200 van bel\xc5\x91le')]
+[Sun Jul 16 17:10:36.513876 2023] [wsgi:error] [pid 19974:tid 1964594176] [remote 192.168.0.108:58226] (Background on this error at: https://sqlalche.me/e/20/e3q8) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+[Sun Jul 16 17:21:50.999438 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] [2023-07-16 17:21:50,937] ERROR in app: Exception on /plants [POST]
+[Sun Jul 16 17:21:50.999690 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] Traceback (most recent call last):
+[Sun Jul 16 17:21:50.999736 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 17:21:50.999776 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     self.dialect.do_execute(
+[Sun Jul 16 17:21:50.999813 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 17:21:50.999851 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     cursor.execute(statement, parameters)
+[Sun Jul 16 17:21:50.999888 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Jul 16 17:21:50.999923 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] 
+[Sun Jul 16 17:21:50.999956 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] The above exception was the direct cause of the following exception:
+[Sun Jul 16 17:21:50.999992 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] 
+[Sun Jul 16 17:21:51.000026 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] Traceback (most recent call last):
+[Sun Jul 16 17:21:51.000072 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 2190, in wsgi_app
+[Sun Jul 16 17:21:51.000108 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     response = self.full_dispatch_request()
+[Sun Jul 16 17:21:51.000146 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+[Sun Jul 16 17:21:51.000183 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     rv = self.handle_user_exception(e)
+[Sun Jul 16 17:21:51.000218 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+[Sun Jul 16 17:21:51.000305 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     rv = self.dispatch_request()
+[Sun Jul 16 17:21:51.000342 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/flask/app.py", line 1469, in dispatch_request
+[Sun Jul 16 17:21:51.000381 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Sun Jul 16 17:21:51.000417 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/var/www/basic-flask-app/app.py", line 49, in add_plant
+[Sun Jul 16 17:21:51.000452 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     db.session.commit()
+[Sun Jul 16 17:21:51.000488 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+[Sun Jul 16 17:21:51.000524 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     return self._proxied.commit()
+[Sun Jul 16 17:21:51.000559 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1920, in commit
+[Sun Jul 16 17:21:51.000595 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     trans.commit(_to_root=True)
+[Sun Jul 16 17:21:51.000630 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "<string>", line 2, in commit
+[Sun Jul 16 17:21:51.000666 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 17:21:51.000702 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 17:21:51.000738 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1236, in commit
+[Sun Jul 16 17:21:51.000774 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     self._prepare_impl()
+[Sun Jul 16 17:21:51.000807 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "<string>", line 2, in _prepare_impl
+[Sun Jul 16 17:21:51.000842 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+[Sun Jul 16 17:21:51.000880 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     ret_value = fn(self, *arg, **kw)
+[Sun Jul 16 17:21:51.000915 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+[Sun Jul 16 17:21:51.000951 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     self.session.flush()
+[Sun Jul 16 17:21:51.000986 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4163, in flush
+[Sun Jul 16 17:21:51.001023 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     self._flush(objects)
+[Sun Jul 16 17:21:51.001057 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4299, in _flush
+[Sun Jul 16 17:21:51.001094 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     transaction.rollback(_capture_exception=True)
+[Sun Jul 16 17:21:51.001130 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+[Sun Jul 16 17:21:51.001166 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     raise exc_value.with_traceback(exc_tb)
+[Sun Jul 16 17:21:51.001229 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+[Sun Jul 16 17:21:51.001268 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     flush_context.execute()
+[Sun Jul 16 17:21:51.001303 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+[Sun Jul 16 17:21:51.001340 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     rec.execute(self)
+[Sun Jul 16 17:21:51.001375 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+[Sun Jul 16 17:21:51.001412 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     util.preloaded.orm_persistence.save_obj(
+[Sun Jul 16 17:21:51.001447 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+[Sun Jul 16 17:21:51.001483 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     _emit_insert_statements(
+[Sun Jul 16 17:21:51.001519 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+[Sun Jul 16 17:21:51.001555 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     result = connection.execute(
+[Sun Jul 16 17:21:51.001590 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1412, in execute
+[Sun Jul 16 17:21:51.001628 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     return meth(
+[Sun Jul 16 17:21:51.001662 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+[Sun Jul 16 17:21:51.001698 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     return connection._execute_clauseelement(
+[Sun Jul 16 17:21:51.001733 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+[Sun Jul 16 17:21:51.001771 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     ret = self._execute_context(
+[Sun Jul 16 17:21:51.001805 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+[Sun Jul 16 17:21:51.001842 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     return self._exec_single_context(
+[Sun Jul 16 17:21:51.001878 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+[Sun Jul 16 17:21:51.001915 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     self._handle_dbapi_exception(
+[Sun Jul 16 17:21:51.001949 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+[Sun Jul 16 17:21:51.001988 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+[Sun Jul 16 17:21:51.002023 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+[Sun Jul 16 17:21:51.002087 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     self.dialect.do_execute(
+[Sun Jul 16 17:21:51.002124 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]   File "/usr/local/lib/python3.9/dist-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+[Sun Jul 16 17:21:51.002161 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261]     cursor.execute(statement, parameters)
+[Sun Jul 16 17:21:51.002196 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[Sun Jul 16 17:21:51.002232 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] [SQL: INSERT INTO plant (name, description) VALUES (?, ?)]
+[Sun Jul 16 17:21:51.002269 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] [parameters: ('patiszon', '11 van bel\xc5\x91le')]
+[Sun Jul 16 17:21:51.002304 2023] [wsgi:error] [pid 20256:tid 1930589184] [remote 192.168.0.108:58261] (Background on this error at: https://sqlalche.me/e/20/e3q8)
